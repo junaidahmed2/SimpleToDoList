@@ -2,6 +2,7 @@
 
 body {
 	background: #fdfdfd;
+	padding-top: 80px;
 }
 
 body, input, button {
@@ -87,6 +88,35 @@ header button {
 header button svg {
 	width: 20px;
 	height: 20px;
+}
+
+.task-container {
+
+	width: 100%;
+	float: left;
+	padding: 15px;
+}
+
+ul.pending-tasks {
+
+	width: 100%;
+	float: left;
+}
+
+ul.pending-tasks li {
+
+	width: 100%;
+	height: 50px;
+	float: left;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0px 3px 10px rgba(140, 140, 200, 0.25);
+	margin-bottom: 10px;
+}
+
+ul.pending-tasks li:last-of-type {
+
+	margin-bottom: 0px;
 }
 
 
