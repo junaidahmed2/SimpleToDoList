@@ -108,10 +108,18 @@ ul.pending-tasks li {
 	width: 100%;
 	height: 50px;
 	float: left;
+	position: relative;
+	font-size: 14px;
+	font-weight: 600px;
+	line-height: 22px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 14px;
 	background: #fff;
 	border-radius: 8px;
 	box-shadow: 0px 3px 10px rgba(140, 140, 200, 0.25);
 	margin-bottom: 10px;
+	padding-right: 100px;
 }
 
 ul.pending-tasks li:last-of-type {
@@ -119,4 +127,75 @@ ul.pending-tasks li:last-of-type {
 	margin-bottom: 0px;
 }
 
+ul.pending-tasks li .buttons {
+
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+
+ul.pending-tasks li .buttons button {
+
+	width: 50px;
+	height: 50px;
+	float: left;
+	border: 0px;
+	box-shadow: none;
+	outline: none;
+	position: relative;
+	cursor: pointer;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+}
+
+ul.pending-tasks li .buttons button:last-of-type:before {
+
+	content: '';
+	width: 1px;
+	height: 30px;
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	background: #ddd;
+}
+
+ul.pending-tasks#completed li .buttons button.complete svg {
+
+	fill: #1E90FF;
+}
+
+
+ul.pending-tasks li .buttons button svg {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -9px 0 0 -9px;
+
+	transition:fill 0.2s ease;
+}
+
+ul.pending-tasks li .buttons button.delete svg {
+	fill: #dedede;
+}
+
+ul.pending-tasks li .buttons button.delete:hover svg {
+	fill: #ff0000;
+}
+
+ul.pending-tasks li .buttons button.complete svg {
+	fill: #dedede;
+}
+
+ul.pending-tasks li .buttons button.complete:hover svg {
+	fill: #1E90FF;
+}
 
