@@ -199,3 +199,20 @@ ul.pending-tasks li .buttons button.complete:hover svg {
 	fill: #1E90FF;
 }
 
+ul.pending-tasks#completed:not(:empty) {
+	position: relative;
+	padding: 60px 0 0 0;
+}
+
+ul.pending-tasks#completed:not(:empty):before {
+
+	content: '';
+	width: 40%;
+	height: 1px;
+	position: absolute;
+	background: #ddd;
+	top: 30px;
+	left: 50%;
+	margin: 0 0px 0 -75px;
+}
+

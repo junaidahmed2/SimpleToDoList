@@ -19,6 +19,26 @@ function addItem() {
 	document.getElementById("item").value = "";
 }
 
+function removeItem() {
+	
+	var item = this.parentNode.parentNode;
+	var list = item.parentNode;
+	
+	list.removeChild(item);
+}
+
+function completeItem() {
+
+	var item = this.parentNode.parentNode;
+	var list = item.parentNode;
+
+	//Get target list depending on current list of item.
+	var targetList = (list.id == "pending") ? document.getElementById("completed") : document.getElementById("pending");
+
+	list.removeChild(item);
+	targetList.insertBefore(item, targetList.childNodes[0]);
+}
+
 function addPendingItem(text){
 
 	//Get list element to add item to.
@@ -35,9 +55,14 @@ function addPendingItem(text){
 	removeButton.classList.add("delete");
 	removeButton.innerHTML = deleteSVG;
 
+	//Add delete event for button.
+	removeButton.addEventListener("click", removeItem);
+
 	var completeButton = document.createElement("button");
 	completeButton.classList.add("complete");
 	completeButton.innerHTML = completeSVG;
+
+	completeButton.addEventListener("click", completeItem);
 
 	buttons.appendChild(removeButton);
 	buttons.appendChild(completeButton);
