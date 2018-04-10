@@ -101,6 +101,7 @@ ul.pending-tasks {
 
 	width: 100%;
 	float: left;
+	padding-top: 10px;
 }
 
 ul.pending-tasks li {
@@ -199,12 +200,12 @@ ul.pending-tasks li .buttons button.complete:hover svg {
 	fill: #1E90FF;
 }
 
-ul.pending-tasks#completed:not(:empty) {
+ul.pending-tasks#completed {
 	position: relative;
 	padding: 60px 0 0 0;
 }
 
-ul.pending-tasks#completed:not(:empty):before {
+ul.pending-tasks#completed:before {
 
 	content: '';
 	width: 40%;
@@ -216,3 +217,19 @@ ul.pending-tasks#completed:not(:empty):before {
 	margin: 0 0px 0 -75px;
 }
 
+ul.pending-tasks#pending:empty:after {
+	content: "No Pending Tasks";
+}
+
+ul.pending-tasks#completed:empty:after{
+	content: "No Completed Tasks";
+}
+
+ul.pending-tasks#pending:after, ul.pending-tasks#completed:after {
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 500;
+	color: #bbb;
+}
